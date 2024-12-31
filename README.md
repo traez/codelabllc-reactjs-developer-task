@@ -1,6 +1,6 @@
-# Frontend Intern Task Moonex Dotprolabs
+# CodelabLLC Reactjs Developer Task
 
-This project was developed as part of my skill-building and preparation for a freelancing web development career, focusing on creating simple, professional websites using Next.js and a headless CMS to deliver modern and efficient solutions.
+This is my task submission for a React.js Developer take home job assessment.
 
 ## Table of contents
 
@@ -20,18 +20,20 @@ This project was developed as part of my skill-building and preparation for a fr
 
 ### The Challenge/User Stories
 
-This project is part of a frontend development challenge designed to evaluate and enhance skills in creating responsive, user-friendly websites based on a Figma design. Participants are tasked with building a professional site that adapts seamlessly across all screen sizes using React and Tailwind CSS. Creativity is encouraged for mobile and tablet layouts, as no designs for these are provided.
+- **Intro** 
+Build a dynamic and responsive shopping cart application featuring three main pages: Product List, Product Details, and Cart. The app must deliver a smooth shopping experience using Next.js for routing, TypeScript for type safety, Zustand for state management, and Tailwind CSS for styling. Clean and consistent code practices can be maintained with optional use of ESLint and Prettier.    
 
-In addition to responsiveness, the project requires implementing minimal animations, such as hover effects and smooth transitions, to deliver a polished user experience. Interactive components like responsive navigation bars and FAQ sections should be built using ShadCN or similar libraries.
+- **Product List Page** 
+The Product List page displays all available products fetched dynamically from an API or mock data. Each product will show a thumbnail, name, price, and an "Add to Cart" button. Pagination, implemented either server-side or client-side, ensures smooth navigation through the catalog without overwhelming the user.    
 
-Participants must deploy the completed project using Vercel or Netlify, ensuring the live site and source code are publicly accessible via a GitHub repository. The deadline for submission is 27 November 2024. 
+- **Product Details Page** 
+The Product Details page provides an in-depth view of a product, including a large image, name, price, and description. Users can select a quantity and add the product to their cart. Dynamic routing ensures every product has its own unique page for easy navigation.    
 
-- **Tools and Technologies** 
-The challenge leverages the React Vite framework for development, with Tailwind CSS for styling and ShadCN for interactive components. The primary fonts are Raleway and Neue Machina, with Fira Code as an alternative for Neue Machina if unavailable. 
+- **Cart Page** 
+The Cart page manages selected items, showing product name, quantity, and price, with options to edit or remove items. The total price updates dynamically based on changes. For empty carts, a clear message is displayed. A "Proceed to Checkout" button directs users to the next step.    
 
-- **Deliverables** 
-A responsive website deployed live on Vercel or Netlify.
-A public GitHub repository containing the project’s source code.
+- **Design and Functionality** 
+The app will feature a modern, mobile-first design, styled with Tailwind CSS for responsiveness and flexibility. Efficient state management with Zustand, type safety with TypeScript, and dynamic routing with Next.js ensure a seamless and scalable solution.   
 
 ### Screenshot
 
@@ -39,8 +41,8 @@ A public GitHub repository containing the project’s source code.
 
 ### Links
 
-- Solution URL: [https://github.com/traez/frontend-intern-task-moonex-dotprolabs](https://github.com/traez/frontend-intern-task-moonex-dotprolabs)
-- Live Site URL: [https://frontend-intern-task-moonex-dotprolabs.vercel.app/](https://frontend-intern-task-moonex-dotprolabs.vercel.app/)
+- Solution URL: [https://github.com/traez/codelabllc-reactjs-developer-task](https://github.com/traez/codelabllc-reactjs-developer-task)
+- Live Site URL: [https://codelabllc-reactjs-developer-task.vercel.app/](https://codelabllc-reactjs-developer-task.vercel.app/)
 
 ## My process
 
@@ -54,52 +56,23 @@ A public GitHub repository containing the project’s source code.
 - [Next.js](https://nextjs.org/) - React framework
 - Typescript
 - Nodejs            
-- Tailwind CSS      
+- Tailwind CSS     
+- Sonner 
+- Zustand  
 
 ### What I learned
    
-- **Google Fonts Optimization with Tailwind CSS and Next.js**  
-Confirmed the protocol for using Next.js's built-in Google Fonts optimization with Tailwind CSS.    
-- **Standardized Max-width Setup**  
-Standardized the max-width configuration for my applications to ensure consistent layouts across projects.
-- **Next.js 15 and React 19 Integration**  
-First use of Next.js 15 alongside stable React 19..
-- **Local vs Network Development Addresses**  
-**Local ([http://localhost:3000](http://localhost:3000))**: is used to access the app directly on the development machine for personal testing.  
-**Network ([http://192.168.241.190:3000](http://192.168.241.190:3000))**: enables other devices on the same local network (e.g., Wi-Fi or LAN) to access the application. This is useful for testing on mobile devices while developing.
-- **Figma Asset Export and Specification Mirroring**  
-Export all assets (files) from a Figma project by clicking Export under the project name in the left sidebar.  
-Explore layers and sublayers in Figma to view and replicate the exact settings for individual items.
-- **Flexbox for Responsive Layouts**  
-Adopted a flexible, responsive layout approach using Flexbox for item alignment along the main axis:  
+**Zustand for State Management**  
+Zustand is a lightweight state management library, similar to Redux Toolkit but more performant than the Context API. It provides a simpler API for managing global state in React applications.   
+**Array Filtering with Boolean**  
+The `.filter(Boolean)` method is a concise way to remove falsy values from an array. It uses the `Boolean` constructor function to convert array elements to true or false, effectively filtering out falsy values (false, null, undefined, 0, NaN, and empty strings).
+
+Example:
+```javascript
+const array = [0, 1, null, 2, '', 3];
+const filteredArray = array.filter(Boolean);
+console.log(filteredArray); // Output: [1, 2, 3]
 ```
-.inner-box {
-  flex-grow: 1;
-  flex-shrink: 1;
-  flex-basis: 0;
-  overflow: auto;
-  border: 1px solid #ccc;
-}
-```
-Tailwind CSS equivalent:  
-`<div className="flex-grow flex-shrink overflow-auto border border-gray-300">Content 1</div>`  
-This approach is preferred over using grid on the main outer container for responsive designs across mobile and desktop views.
-- **Smooth Color Transitions with Tailwind CSS**  
-The `transition-colors` utility in Tailwind CSS adds smooth transitions for color property changes (e.g., color, background-color) when triggered by hover, focus, or JavaScript.
-- **Multiple Background Images with Tailwind CSS**  
-Tailwind CSS supports multiple background images using arbitrary value syntax:
-```html
-<div className="bg-[url('/circles.png'),url('/bg.png')]">
-```
-This applies two layered background images, with '/circles.png' on top of '/bg.png'.
-- **Gap Property in CSS and Tailwind**  
-The `gap` CSS property is a shorthand for `column-gap` and `row-gap`. Tailwind CSS provides utilities like:
-- `gap-x-1` for `column-gap: 0.25rem; /* 4px */`
-- `gap-y-1` for `row-gap: 0.25rem; /* 4px */`
-- **Sibling State Styling with Peer Modifier in Tailwind CSS**  
-The `peer` class in Tailwind CSS allows styling an element based on the state of its sibling. Apply `peer` to a triggering element and `peer-{modifier}` to its sibling. For example, `peer-hover:block` makes a sibling visible when the peer element is hovered. The peer and its target must be direct siblings for this to work.
-- **Future Enhancement: Component Load Animations**  
-Adding animations/transitions for each component on page load would be a nice-to-have feature. While not implemented due to time constraints, it's recognized as a potential future enhancement that can be implemented as needed.
 
 ### Continued development
 
