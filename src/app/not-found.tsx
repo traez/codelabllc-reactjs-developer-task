@@ -9,7 +9,7 @@ export default function NotFound() {
         href="/"
         className="inline-block px-6 py-3 bg-blue-600 text-white rounded-lg transition-colors duration-300 hover:bg-blue-700"
       >
-        Return to Naija Japa Postgresql App Home
+        Return to CodelabLLC Reactjs Developer Task Home
       </Link>
     </div>
   );

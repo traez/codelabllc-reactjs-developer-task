@@ -4,7 +4,7 @@
 
 /* 
 640px, 768px, 1024px, 1280px, 1536px (Tailwind Default - sm, md, lg, xl, 2xl)
-Add breakpoint  screens: {'xs': '500px'} and {'1xl': '1400px'},
+Add breakpoint  screens: {'xs': '480px'} and {'1xl': '1440px'},
 Design for 1280px max width, beyond background color.
 Design for 375px (320px) smallest width without scroll bar
 */

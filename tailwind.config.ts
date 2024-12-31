@@ -17,8 +17,8 @@ export default {
         trebuchetMs: ['Trebuchet MS'],
       },
       screens: {
-        'xs': '500px',
-        '1xl': '1400px',
+        'xs': '480px',
+        '1xl': '1440px',
       },
     },
   },

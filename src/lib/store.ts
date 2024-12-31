@@ -1,13 +1,13 @@
 import { createStore} from 'zustand/vanilla'
-import { createCounterSlice, SliceCounterType } from '@/lib/sliceCounter'
-import { createUserSlice, SliceUserType } from '@/lib/sliceUser'
+import { createProductSlice, SliceProductType } from '@/lib/sliceProduct'
+import { createCartSlice, SliceCartType } from '@/lib/sliceCart'
 
-export type BoundStore = SliceCounterType & SliceUserType
+export type BoundStoreType = SliceProductType & SliceCartType
 
 export const createBoundStore = () => {
-  const store = createStore<BoundStore>()((set, get, store) => ({
-    ...createCounterSlice(set, get, store),
-    ...createUserSlice(set, get, store)
-  }))
-  return store
-}
+    const store = createStore<BoundStoreType>()((set, get, store) => ({
+      ...createProductSlice(set, get, store),
+      ...createCartSlice(set, get, store)
+    }))
+    return store
+  }
