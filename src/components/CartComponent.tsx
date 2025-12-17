@@ -138,3 +138,29 @@ const CartComponent = () => {
 };
 
 export default CartComponent;
+
+/* 
+Section 1: Imports and State Management
+The code begins with the use client directive to indicate client-side rendering. It imports useAppStore from a custom Zustand provider for state management, React's useState for local component state, and essential components from libraries like Image and Link from Next.js and toast from Sonner for notifications. These imports set up the necessary tools for managing the cart's state, rendering dynamic content, and providing feedback to users.
+
+Section 2: Utility Function for Title Formatting
+The formatTitle function processes product names by removing certain characters (like hyphens, commas, and excessive spaces) and limits the length of the first product name to 10 characters. It then constructs a new title by appending the first word of the second name, ensuring both words are capitalized correctly. This function ensures concise, user-friendly, and formatted product titles.
+
+Section 3: Mapping Cart with Product Details
+The cartWithDetails array merges data from the cart and products states by finding the matching product for each cart item and calculating the totalPrice as the product of the price and quantity. This derived state is used to enrich cart items with additional details, such as product price and total price.
+
+Section 4: Calculating Total Cart Price
+The totalCartPrice variable uses reduce to compute the sum of the totalPrice values of all items in the cartWithDetails array. This value represents the grand total of the cart and is used later in the checkout summary.
+
+Section 5: Empty Cart View
+The component checks if the cart array is empty and, if true, renders a simple message indicating that the cart is empty. This conditional rendering ensures a user-friendly experience by providing immediate feedback when no items are in the cart.
+
+Section 6: Main Cart Layout and Item Rendering
+The main layout of the cart iterates through cartWithDetails to display each item's image, title, price, link to details, and controls for managing quantities. The menu section includes the image and formatted title, while the nav section provides buttons for incrementing, decrementing, and removing items from the cart, as well as showing the total price for each item. The layout is responsive, adapting to different screen sizes.
+
+Section 7: Checkout Button and Total Price Summary
+At the bottom, the cart displays the totalCartPrice and a "Proceed to Checkout" button. Clicking the button triggers the handleCheckout function, which simulates a checkout process by showing a loading state and using the toast to notify the user. The button is disabled during processing to prevent duplicate actions.
+
+Section 8: Component Export
+Finally, the CartComponent is exported as the default export, allowing it to be imported and used in other parts of the application. This completes the implementation of a responsive, user-friendly cart with comprehensive functionality for managing products and proceeding to checkout.
+*/

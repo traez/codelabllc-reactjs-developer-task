@@ -57,7 +57,7 @@ const ProductList = () => {
     }
   };
 
-  const indexOfLastProduct = currentPage * productsPerPage;
+  const indexOfLastProduct = currentPage * productsPerPage; 
   const indexOfFirstProduct = indexOfLastProduct - productsPerPage;
   const currentProducts = products.slice(
     indexOfFirstProduct,
@@ -141,3 +141,32 @@ const ProductList = () => {
 };
 
 export default ProductList;
+
+/* 
+Import Statements and State Initialization
+The code begins with essential imports like React hooks (useEffect, useState), Next.js components (Image, Link), a toast notification library (sonner), and a Zustand store for managing application state. The component utilizes these to fetch, display, and manage products dynamically. The state includes products fetched from the API, setProducts to update the store, and addToCart for cart functionality. Additionally, currentPage tracks the current pagination state, and productsPerPage defines the number of products displayed per page.
+
+Fetching Products
+In the useEffect hook, the component fetches product data from a Mockaroo API if no products are already loaded. The fetchProducts function handles the request, parsing the JSON response and updating the Zustand store via setProducts. Errors are caught and logged to ensure debugging is straightforward. This design ensures the product list is fetched only once unless the state changes, improving efficiency.
+
+Formatting Product Titles
+The formatTitle function cleans and formats product names for display. It removes unwanted characters, truncates strings, and combines parts of name and name2 to create a more user-friendly title. Additionally, it capitalizes the first letter of each word, providing consistency and readability in the UI. This function enhances the visual appeal of the product list by standardizing titles.
+
+Adding Products to Cart
+The handleAddToCart function enables adding products to the cart by locating a product with the given ID from the products array. If the product is found, the addToCart function from the Zustand store is called, and a success toast notification is displayed. If the product cannot be found, an error message is logged, and an error toast is displayed. This approach improves user feedback and handles edge cases gracefully.
+
+Pagination Logic
+Pagination is implemented by calculating indices for slicing the products array into pages. The currentPage state determines which products to display, with productsPerPage specifying the number per page. totalPages calculates the total number of pages. This setup ensures the component efficiently handles large datasets by only rendering the necessary subset of products for the current page.
+
+Pagination Controls Component
+The PaginationControls component renders page navigation buttons dynamically based on totalPages. It highlights the current page and updates currentPage when a button is clicked. Buttons are styled to differentiate the active page from inactive ones, ensuring clarity and usability. This modular design keeps the codebase clean and reusable.
+
+Product List Rendering
+The main product list is rendered conditionally. If no products are loaded, a loading message is shown. Otherwise, the currentProducts array is displayed in a responsive grid. Each product card includes its formatted title, an image, price, and buttons for adding to the cart or viewing details. This layout prioritizes responsiveness and accessibility, catering to various screen sizes and user needs.
+
+Product Card Details
+Each product card contains the product’s image, truncated title, and price. The Image component ensures images are optimized for loading performance. Buttons for "Add to Cart" and "Details" provide essential interactivity. Styling emphasizes usability, with hover effects offering visual feedback to users.
+
+Reusing Pagination Controls
+Pagination controls are rendered both above and below the product list for improved user navigation. This redundancy ensures users can easily navigate regardless of their position on the page, improving overall UX.
+*/

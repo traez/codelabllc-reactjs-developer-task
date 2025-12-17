@@ -133,3 +133,32 @@ const ProductDetails = () => {
 };
 
 export default ProductDetails;
+
+/* 
+Import Statements and Initial Setup
+The code begins by importing essential modules such as useEffect, useState from React, and several Next.js utilities like Image, Link, useParams, and useRouter. Additionally, it includes toast from the sonner library for notifications and a custom useAppStore hook for state management using Zustand. The ProductDetails component initializes two states: one for the current product and another for the quantity. It retrieves the id from the URL parameters and uses it to find the corresponding product.
+
+useEffect for Fetching Product Data
+The useEffect hook runs whenever products, productId, or router changes. It attempts to find the product with the matching id in the products array from the global store. If no product is found, it redirects the user to the homepage after a 3-second delay. The timer is cleared during cleanup to prevent memory leaks.
+
+formatTitle Function
+The formatTitle function formats the product title by cleaning up unwanted characters such as dashes, commas, and extra spaces. It extracts and processes the first ten characters from both name fields (name and name2), ensuring the resulting title is properly capitalized and easy to read.
+
+handleAddToCart Function
+This function is invoked when the user clicks the "Add to Cart" button. It ensures the product exists, then calls the addToCart method from the global store, passing the product's ID and the desired quantity. A success notification is displayed using the toast function, dynamically showing whether a single item or multiple items were added.
+
+Loading State Handling
+If no product is found (initially or after a failed fetch), the component displays a loading indicator. This fallback ensures users are aware of the ongoing operation while the product details are being fetched or the redirect timer is running.
+
+Main Component Structure
+The ProductDetails component renders a well-structured layout for product details. The main container is styled with Tailwind CSS, and its content is divided into two sections: the product image and the product details. The image is dynamically loaded using the Image component, ensuring responsive behavior and priority loading.
+
+Product Details Section
+The right section contains the product title, price, description, and quantity input. The title is formatted using the formatTitle function, while the price is prefixed with a currency symbol (₦). Descriptions from product.description and product.description2 are concatenated and displayed in a visually distinct area. The quantity input restricts values to at least 1, preventing invalid inputs.
+
+Action Buttons
+Two buttons are included: one for adding the product to the cart and another for navigating to the cart page. These buttons are styled with Tailwind classes and provide feedback with hover effects, making the interface intuitive and visually appealing. The "Add to Cart" button calls the handleAddToCart function, while the "Go to Cart" button uses a Link for navigation.
+
+Exporting the Component
+Finally, the component is exported as the default export for use in other parts of the application. This structure ensures modularity and seamless integration within the Next.js app.
+*/
